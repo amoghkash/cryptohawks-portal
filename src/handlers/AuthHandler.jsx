@@ -4,10 +4,9 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import Footer from "../components/constants/Footer";
 
 function AuthHandler(props) {
-    console.log("got here")
     return (
         <div>
-        <Router>
+        <Router basename={'/cryptohawks-portal'}>
             <Switch>
                 <Route exact path="/">
                     <Login reload={props.reload}/>

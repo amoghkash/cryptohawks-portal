@@ -1,6 +1,7 @@
 // Returns Login Info
 async function loginUser(credentials) {
     const loginData= await getUserLoginData(credentials)
+    //console.log(loginData)
     return loginData
 }
 

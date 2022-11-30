@@ -10,7 +10,7 @@ function App(props) {
   console.log("APP")
   return (
     <div>
-      <Router>
+      <Router basename={'/cryptohawks-portal'}>
         <Header /> 
         <Switch>
           <Route exact path="/">
