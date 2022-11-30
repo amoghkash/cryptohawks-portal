@@ -12,7 +12,7 @@ function Menu() {
 
                 <ul className="font-bold text-4xl">
                     <li className="py-2 px-2">
-                        <Link to="/" className="text-blue-500">
+                        <Link to="/menu" className="text-blue-500">
                             <FontAwesomeIcon icon={faHome} className="pr-5"/>
                             Home
                         </Link>

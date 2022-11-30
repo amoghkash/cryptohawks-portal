@@ -1,5 +1,5 @@
 import { Cookies } from 'react-cookie'
-import Login from './pages/main/Login'
+import AuthHandler from './handlers/AuthHandler';
 import App from './pages/main/App'
 import React from 'react'
 
@@ -15,12 +15,14 @@ class Entrypoint extends React.Component {
       }
     
     render() {
-        console.log('EntryPoint')
-        let username = cookies.get('username')
-        if(!username){
-            return( <Login reload={this.rerenderParentCallback}/> )
+        //console.log('EntryPoint') TEST
+        let token = cookies.get('tokenSet')
+        console.log(token)
+        console.log("Rendered from scratch")
+        if(!token){
+            return( <AuthHandler reload={this.rerenderParentCallback}/> )
         }
-        return ( <App /> )
+        return ( <App reload={this.rerenderParentCallback}/> )
       }
 }
 

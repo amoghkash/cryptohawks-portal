@@ -1,0 +1,4 @@
+- API Stuff
+    - Pull user data from API
+- Add catch error function to LoginForm in loginUser Function callback
+- 
