@@ -7,12 +7,13 @@ import Home from './Home';
 
 function App(props) {
   // Make API Request for All User Data
+  console.log("APP")
   return (
     <div>
       <Router>
         <Header /> 
         <Switch>
-          <Route exact path="/index.html">
+          <Route exact path="/">
             <Home reload={props.reload}/>
           </Route>
           

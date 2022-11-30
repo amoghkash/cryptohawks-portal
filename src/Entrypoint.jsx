@@ -17,9 +17,8 @@ class Entrypoint extends React.Component {
     render() {
         //console.log('EntryPoint') TEST
         let token = cookies.get('tokenSet')
-        console.log(token)
-        console.log("Rendered from scratch")
         if(!token){
+            console.log("AuthAHndler")
             return( <AuthHandler reload={this.rerenderParentCallback}/> )
         }
         return ( <App reload={this.rerenderParentCallback}/> )
