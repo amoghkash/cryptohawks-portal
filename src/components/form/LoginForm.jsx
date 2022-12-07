@@ -1,5 +1,5 @@
 import {useState} from "react";
-import loginUser from './LoginAuth'
+import loginUser from '../../scripts/LoginAuth'
 import { useCookies } from "react-cookie";
 
 
@@ -16,9 +16,10 @@ export default function LoginForm(props){
           password
         }); 
         if(response.valid) {
-            setCookie('username', username, {path:'/'});
-            setCookie('name', response.name, {path:'/'});
-            setCookie('tokenSet', response.tokenSet, {path:'/', maxAge:86400000});
+            setCookie('username', username, {path:'/', secure: false});
+            setCookie('name', response.name, {path:'/', secure: false});
+            //setCookie('tokenSet', response.tokenSet, {path:'/', maxAge:response.token_expiresin, secure: false});
+            setCookie('token', response.access_token, {path:'/', maxAge:response.token_expires_in, secure:false})
             console.log("supposed to reload");
             props.reload();
         }else {

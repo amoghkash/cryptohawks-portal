@@ -34,7 +34,7 @@ function Navigation() {
                 item && 
                 <animated.div 
                 style={styles}
-                className="bg-neutral-400 fixed top-0 left-0 w-full h-full z-50"
+                className="bg-neutral-400/75 fixed top-0 left-0 w-full h-full z-50"
                 onClick={()=>setShowMenu(false)}>
                 </animated.div>
                 )

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
 
-import Footer from '../../components/constants/Footer';
-import Header from '../../components/constants/Header';
+import Footer from '../components/constants/Footer';
+import Header from '../components/constants/Header';
 import Dashboard from './Dashboard';
 import Home from './Home';
 

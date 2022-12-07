@@ -1,5 +1,5 @@
-import Footer from "../../components/constants/Footer";
-import LoginForm from "../login/LoginForm";
+import Footer from "../components/constants/Footer";
+import LoginForm from "../components/form/LoginForm";
 import { Link } from 'react-router-dom'
 
 

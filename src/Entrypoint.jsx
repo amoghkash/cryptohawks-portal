@@ -1,6 +1,6 @@
 import { Cookies } from 'react-cookie'
 import AuthHandler from './handlers/AuthHandler';
-import App from './pages/main/App'
+import App from './pages/App'
 import React from 'react'
 
 const cookies = new Cookies();
@@ -16,13 +16,11 @@ class Entrypoint extends React.Component {
     
     render() {
         //console.log('EntryPoint') TEST
-        let token = cookies.get('tokenSet')
-        console.log(token)
+        let token = cookies.get('token')
         if(!token){
-            console.log("AuthHandler")
             return( <AuthHandler reload={this.rerenderParentCallback}/> )
         }
-        return ( <App reload={this.rerenderParentCallback}/> )
+            return ( <App reload={this.rerenderParentCallback}/> )
       }
 }
 

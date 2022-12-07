@@ -1,9 +1,9 @@
 import React from "react";
-
+import TodoList from "../components/todo/TodoList";
 function Dashboard(props) {
     return (
         <div>
-            <p>This is the Dashboard</p>
+            <TodoList />
         </div>
     );
 }; 
