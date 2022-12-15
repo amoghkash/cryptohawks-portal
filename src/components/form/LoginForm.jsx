@@ -11,6 +11,8 @@ export default function LoginForm(props){
 
     const handleSubmit = async e => {
         e.preventDefault();
+        console.log(username)
+        console.log(password)
         let response = await loginUser({
           username,
           password
@@ -18,6 +20,7 @@ export default function LoginForm(props){
         if(response.valid) {
             setCookie('username', username, {path:'/', secure: false});
             setCookie('name', response.name, {path:'/', secure: false});
+            setCookie('admin', response.admin, {path:'/', secure:false})
             //setCookie('tokenSet', response.tokenSet, {path:'/', maxAge:response.token_expiresin, secure: false});
             setCookie('token', response.access_token, {path:'/', maxAge:response.token_expires_in, secure:false})
             console.log("supposed to reload");

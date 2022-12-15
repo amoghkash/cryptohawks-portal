@@ -1,15 +1,14 @@
 import { Cookies } from 'react-cookie'
 
 
-async function getUserData(credentials) {
+export async function getUserData() {
     const cookies = new Cookies();
     let token = cookies.get('token')
     if(token) {
-        let requestUrl = 'http://localhost:8080/user/?token='+token
+        let requestUrl = 'https://cryptohawks-api-testing-ueanhy6e5q-uk.a.run.app/user/?token='+token
         return fetch(requestUrl, {
             method: 'GET',
-            body: res,
-             //credentials: 'include', // Necessary to Save COokies
+            credentials: 'include', // Necessary to Save COokies
             headers: {
             }
           })
@@ -17,3 +16,13 @@ async function getUserData(credentials) {
     }
 }
 
+export async function getAllUser() {
+    let requestUrl = 'https://cryptohawks-api-testing-ueanhy6e5q-uk.a.run.app/user/all'
+    return fetch(requestUrl, {
+        method: 'GET',
+        credentials: 'include', // Necessary to Save COokies
+        headers: {
+        }
+        })
+        .then(data => data.json())
+}

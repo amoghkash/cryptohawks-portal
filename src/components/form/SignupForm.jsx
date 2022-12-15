@@ -87,7 +87,7 @@ export default function SignupForm(props){
                                 width={'100%'}
                                 multi={false}
                                 options={GradeSelections}
-                                defaultValue={9}
+                                defaultValue={1}
                                 onChange={(e) => setGrade(e)}
                                 className={'rounded-full border-2 border-blue-800 p-2'}
                             />

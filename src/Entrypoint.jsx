@@ -3,6 +3,7 @@ import AuthHandler from './handlers/AuthHandler';
 import App from './pages/App'
 import React from 'react'
 
+
 const cookies = new Cookies();
 class Entrypoint extends React.Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class Entrypoint extends React.Component {
 
     rerenderParentCallback() {
         this.forceUpdate();
-      }
+    }
     
     render() {
         //console.log('EntryPoint') TEST

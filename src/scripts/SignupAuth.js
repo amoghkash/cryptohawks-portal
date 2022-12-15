@@ -8,10 +8,10 @@ async function signupUser(credentials) {
 async function registerUser(credentials) {
     const res = JSON.stringify(credentials)
     console.log(res)
-    return fetch('http://localhost:8080/user/signup', {
+    return fetch('https://cryptohawks-api-testing-ueanhy6e5q-uk.a.run.app/user/signup', {
       method: 'POST',
       body: res,
-      //credentials: 'include', // Necessary to Save COokies
+      credentials: 'include', // Necessary to Save COokies
       headers: {
         'Content-Type': 'application/json',
       }

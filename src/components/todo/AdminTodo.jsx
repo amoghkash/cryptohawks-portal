@@ -1,7 +1,10 @@
 import {React, useState} from "react";
 import ProgressBar from 'react-customizable-progressbar'
+import EditTodoButton from "./EditTodoButton";
+import { Link } from 'react-router-dom'
 
-function Todo({todo}) {
+
+function AdminTodo({todo}) {
     const [colorSet, setColorSet] = useState(false)
     const [progressBarColor, setProgressBarColor] = useState('')
     let percentage = todo.percentCompleted
@@ -67,6 +70,14 @@ function Todo({todo}) {
             >
             </ProgressBar>
         </div>
+        <div className='flex-shrink'>
+            <Link to="/editTask">
+                <EditTodoButton id={todo.uid}/>
+                <p>Go to Edit</p>
+            </Link>
+            
+        </div>
+        
       </div>
     );
 };
@@ -85,6 +96,6 @@ function formatDate(date_str) {
       padTo2Digits(date.getDate()),
       date.getFullYear(),
     ].join('/');
-  }
+}
 
-export default Todo
+export default AdminTodo

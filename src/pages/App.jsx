@@ -4,6 +4,10 @@ import Footer from '../components/constants/Footer';
 import Header from '../components/constants/Header';
 import Dashboard from './Dashboard';
 import Home from './Home';
+import Account from './Account';
+import Admin from './Admin';
+import CreateTask from './CreateTask';
+import EditTask from './EditTask';
 
 function App(props) {
   // Make API Request for All User Data
@@ -22,7 +26,16 @@ function App(props) {
           </Route>
 
           <Route exact path="/account">
-            <h1 className='font-bold'>This is the account page</h1>
+            <Account/>
+          </Route>
+          <Route exact path="/admin">
+            <Admin />
+          </Route>
+          <Route exact path="/createTask">
+            <CreateTask />
+          </Route>
+          <Route exact path="/editTask">
+            <EditTask />
           </Route>
           <Redirect to='/'/>
         </Switch>
