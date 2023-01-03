@@ -2,7 +2,7 @@ import { Cookies } from 'react-cookie'
 
 export async function getTask(taskID) {
 // TO DO: Implement get Singular Task
-    let requestUrl = 'https://cryptohawks-api-testing-ueanhy6e5q-uk.a.run.app/task/'+taskID
+    let requestUrl = 'http://localhost:8080/task/'+taskID
     return (fetch(requestUrl, {
         method: 'GET',
         credentials: 'include', // Necessary to Save COokies
@@ -35,7 +35,7 @@ export default async function getAllUserTasks(username) {
 
 
 async function data_getAllUserTasks(username) {
-    let requestUrl = 'https://cryptohawks-api-testing-ueanhy6e5q-uk.a.run.app/user/'+ username + '/tasks'
+    let requestUrl = 'http://localhost:8080/user/'+ username + '/tasks'
     return (fetch(requestUrl, {
         method: 'GET',
         credentials: 'include', // Necessary to Save COokies
@@ -45,7 +45,7 @@ async function data_getAllUserTasks(username) {
 }
 
 async function data_getAllTasks() {
-    let requestUrl = 'https://cryptohawks-api-testing-ueanhy6e5q-uk.a.run.app/task/all'
+    let requestUrl = 'http://localhost:8080/task/all'
     return (fetch(requestUrl, {
         method: 'GET',
         credentials: 'include', // Necessary to Save COokies

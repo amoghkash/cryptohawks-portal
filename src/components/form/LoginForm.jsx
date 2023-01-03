@@ -11,8 +11,6 @@ export default function LoginForm(props){
 
     const handleSubmit = async e => {
         e.preventDefault();
-        console.log(username)
-        console.log(password)
         let response = await loginUser({
           username,
           password

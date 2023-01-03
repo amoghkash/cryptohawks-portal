@@ -5,7 +5,7 @@ export async function getUserData() {
     const cookies = new Cookies();
     let token = cookies.get('token')
     if(token) {
-        let requestUrl = 'https://cryptohawks-api-testing-ueanhy6e5q-uk.a.run.app/user/?token='+token
+        let requestUrl = 'http://localhost:8080/user/?token='+token
         return fetch(requestUrl, {
             method: 'GET',
             credentials: 'include', // Necessary to Save COokies
@@ -17,7 +17,7 @@ export async function getUserData() {
 }
 
 export async function getAllUser() {
-    let requestUrl = 'https://cryptohawks-api-testing-ueanhy6e5q-uk.a.run.app/user/all'
+    let requestUrl = 'http://localhost:8080/user/all'
     return fetch(requestUrl, {
         method: 'GET',
         credentials: 'include', // Necessary to Save COokies

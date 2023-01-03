@@ -1,11 +1,8 @@
 
-
-export default async function makeTask(taskData) {
-    let requestUrl = 'http://localhost:8080/task'
-    const req = JSON.stringify(taskData)
+export default async function getAPIVersion() {
+    let requestUrl = 'http://localhost:8080/version'
     return fetch(requestUrl, {
-        method: 'POST',
-        body: req,
+        method: 'GET',
         credentials: 'include', // Necessary to Save COokies
         headers: {
             'Content-Type': 'application/json'

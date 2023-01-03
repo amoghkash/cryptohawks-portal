@@ -1,6 +1,6 @@
 export default async function updateTask(taskData) {
     console.log(taskData)
-    let requestUrl = 'https://cryptohawks-api-testing-ueanhy6e5q-uk.a.run.app/task'
+    let requestUrl = 'http://localhost:8080/task'
     const req = JSON.stringify(taskData)
     console.log(req)
     return fetch(requestUrl, {
