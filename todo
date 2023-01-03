@@ -1,8 +1,8 @@
-- API Stuff
+- API Stuff @done
     - Pull user data from API @done
 - Add catch error function to LoginForm in loginUser Function callback @done
 -  Add Logout Button
-- Save token locally
+- Save token locally @done
 - Change Signup POST request to properly incorporate Sub team selections, convert array ton JSOn object @done
-- Add Owner field to task
-- Change color of progress bar based on task completion
+- Add Owner field to task @done
+- Change color of progress bar based on task completion @done

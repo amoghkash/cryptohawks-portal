@@ -165,3 +165,5 @@ packages/react-devtools-shell/dist
 packages/react-devtools-timeline/dist
 
 package-lock.json
+
+/dist

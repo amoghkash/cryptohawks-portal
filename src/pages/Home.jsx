@@ -1,5 +1,5 @@
 import { useCookies } from "react-cookie"
-import { Link } from 'react-router-dom'
+import Dashboard from "./Dashboard";
 
 
 function Home(props) {
@@ -11,35 +11,20 @@ function Home(props) {
           <h1>
               Welcome {cookie.name}, thanks for joining Cryptohawks.
           </h1>
+          <Dashboard />
         </div>
       );
     }
     
     return (
-      <div className="bg-slate-400">
-        <h1>
+      <div className="">
+        <h1 className="font-sans text-4xl font-semibold ml-3">
             Hello {cookie.name}
         </h1>
-        <AdminButton />
+        <Dashboard />
       </div>
     );
 }; 
 
 
-function AdminButton(props) {
-  const [cookie, setCookie] = useCookies(['user'])
-  if(cookie.admin == "true"){
-    return(
-      <div>
-        <Link to="/admin" className="text-blue-500">
-          <button>Admin Dashboard</button>
-        </Link>
-      </div>
-    )
-  } else {
-    <div>
-
-    </div>
-  }
-}
 export default Home;

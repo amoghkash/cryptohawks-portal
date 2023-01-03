@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import getAllUserTasks, { getAllTasks } from '../scripts/getTask';
+import {getAllTasks} from '../scripts/api/api_task'
 import { Link } from 'react-router-dom'
-import AdminTodo from '../components/todo/AdminTodo';
+import AdminTask from '../components/task/AdminTodo';
 
 function Admin() {
     const [todos, setTodos] = useState([]);
@@ -22,10 +22,10 @@ function Admin() {
                     <button>Create Task</button>
                 </Link>
             </div>
-            <div onLoad={loadTasks} className="grid justify-items-center bg-slate-400 p-3 h-fit w-screen pb-20">
+            <div onLoad={loadTasks} className="grid justify-items-center bg-slate-400 p-3 h-screen w-screen pb-20">
                 <div className='space-y-2 w-4/5'>
                     {todos.map((todo, index) => (
-                    <AdminTodo
+                    <AdminTask
                         key={index}
                         index={index}
                         todo={todo}
