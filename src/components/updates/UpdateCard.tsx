@@ -1,4 +1,6 @@
 import React from 'react';
+import { Anchorme } from 'react-anchorme'
+
 
 function UpdateCard({update}) {
     var date = new Date(update.postDate)
@@ -15,7 +17,9 @@ function UpdateCard({update}) {
                 </div>
             </div>
             <div className='mx-2 mt-2 text-zinc-700'>
-                {update.description}
+                <Anchorme target="_blank" rel="noreferrer noopener">
+                    {update.description}
+                </Anchorme>
             </div>
         </div>
  
