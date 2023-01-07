@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 function UpdateCard({update}) {
     var date = new Date(update.postDate)

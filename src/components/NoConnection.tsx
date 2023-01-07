@@ -1,4 +1,3 @@
-import { connect } from 'http2';
 import React, { useState, useEffect }  from 'react';
 import { getAPIVersion } from '../scripts/api/api_info';
 

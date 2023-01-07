@@ -1,9 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { useState } from 'react';
 import { Gantt, Task} from 'gantt-task-react';
 import "gantt-task-react/dist/index.css";
 import {getAllTasks} from '../../../scripts/api/api_task';
-import { useCookies } from "react-cookie"
 import { loading } from './GanttChart';
 import { getTaskList } from '../../../scripts/ganttProcessor';
 import { getUpdates } from '../../../scripts/api/api_updates';
@@ -34,7 +33,7 @@ function AdminGanttChart() {
     d.setDate(d.getDate()-1)
     tasks = getTaskList(tasklist)
     return(
-        <div className=' min-h-9 my-3 mx-3 p-4 bg-crypto-blue rounded-lg'>
+        <div className='my-3 mx-3 p-4 bg-crypto-blue rounded-lg'>
             <div className='bg-white'>
                 <Gantt 
                 tasks={tasks}

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useState } from 'react';
 import { Gantt, Task} from 'gantt-task-react';
 import "gantt-task-react/dist/index.css";
@@ -39,7 +39,7 @@ function GanttChart() {
     d.setDate(d.getDate()-1)
     tasks = getTaskList(tasklist)
     return(
-        <div className='max-h-7 my-3 mx-3 p-4 bg-crypto-blue rounded-lg'>
+        <div className='my-3 mx-3 p-4 bg-crypto-blue rounded-lg'>
             <div className='bg-white'>
                 <Gantt 
                 tasks={tasks}

@@ -2,6 +2,7 @@ import Footer from "../../components/navigation/Footer";
 import SignupForm from "../../components/forms/auth/SignupForm";
 import { Link } from 'react-router-dom'
 import NoConnection from "../../components/NoConnection";
+import React from 'react';
 
 
 function Signup() {

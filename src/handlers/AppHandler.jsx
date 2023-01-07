@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
+import React from 'react';
 
 import Header from '../components/navigation/Header';
 import Footer from '../components/navigation/Footer';
@@ -6,7 +7,6 @@ import NoConnection from '../components/NoConnection';
 
 import Home from '../pages/Home';
 import Account from '../pages/Account';
-import Admin from '../pages/Admin';
 import CreateTask from '../pages/tasks/CreateTask';
 import EditTask from '../pages/tasks/EditTask';
 import Tasks from '../pages/Tasks';
@@ -14,6 +14,7 @@ import Calendar from '../components/calendar/Calendar';
 import CreateUpdate from '../pages/update/CreateUpdate';
 import Test from '../pages/Test';
 
+import Admin from '../pages/Admin';
 
 function AppHandler() {
   // Make API Request for All User Data

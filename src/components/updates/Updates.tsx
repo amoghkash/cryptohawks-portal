@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useState } from 'react';
 import { getUpdates } from '../../scripts/api/api_updates';
 import UpdateCard from './UpdateCard';

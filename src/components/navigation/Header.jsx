@@ -1,3 +1,4 @@
+import React from 'react';
 import Navigation from './Navigation';
 import { Link } from 'react-router-dom'
 import { Cookies } from 'react-cookie'
