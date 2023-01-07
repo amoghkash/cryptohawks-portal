@@ -1,6 +1,6 @@
 // Get API Version
 export async function getAPIVersion() {
-    let requestUrl = 'http://localhost:8080/version'
+    let requestUrl = 'https://cryptohawks-api-testing-ueanhy6e5q-uk.a.run.app/version'
     return fetch(requestUrl, {
         method: 'GET',
         credentials: 'include', // Necessary to Save COokies
@@ -9,4 +9,6 @@ export async function getAPIVersion() {
         }
         })
         .then(data => data.json())
+        .catch((error) => {
+        })
 }

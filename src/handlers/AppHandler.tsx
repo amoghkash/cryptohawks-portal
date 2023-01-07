@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-do
 
 import Header from '../components/navigation/Header';
 import Footer from '../components/navigation/Footer';
+import NoConnection from '../components/NoConnection';
 
 import Home from '../pages/Home';
 import Account from '../pages/Account';
@@ -10,6 +11,8 @@ import CreateTask from '../pages/tasks/CreateTask';
 import EditTask from '../pages/tasks/EditTask';
 import Tasks from '../pages/Tasks';
 import Calendar from '../components/calendar/Calendar';
+import CreateUpdate from '../pages/update/CreateUpdate';
+import Test from '../pages/Test';
 
 
 function AppHandler() {
@@ -44,13 +47,22 @@ function AppHandler() {
             <EditTask />
           </Route>
 
+          <Route exact path='/createUpdate'>
+            <CreateUpdate />
+          </Route>
+
           <Route exact path="/calendar">
             <Calendar />
           </Route>
           
+          <Route exact path="/test">
+            <Test />
+          </Route>
+
           <Redirect to='/'/>
         </Switch>
         {/* <Footer /> */}
+        <NoConnection />
       </Router>
     </div>
 

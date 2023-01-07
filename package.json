@@ -9,10 +9,10 @@
     "old": "vite",
     "build": "tsc && vite build && npm run copy",
     "copy": "shx cp dist/index.html dist/404.html",
-    "serve": "node generateBuild.js && npm run build && vite preview",
+    "serve": "npm install --force && node generateBuild.js && npm run build && vite preview",
     "deploy": "npm run build && gh-pages -d dist",
-    "major-release":"node prod_major.js && deploy",
-    "minor-release":"node prod_minor.js && deploy"
+    "major-release": "node prod_major.js && deploy",
+    "minor-release": "node prod_minor.js && deploy"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -26,6 +26,7 @@
     "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.41.1",
+    "react-icons": "^4.7.1",
     "react-router-dom": "^5.3.4",
     "react-slider": "^2.0.4",
     "react-spring": "^9.6.1"
@@ -40,8 +41,8 @@
     "@types/react-datepicker": "^4.8.0",
     "@types/react-dom": "^18.0.10",
     "@types/react-router-dom": "^5.3.3",
-    "@vitejs/plugin-react-swc": "^3.0.0",
     "@vitejs/plugin-react": "^2.2.0",
+    "@vitejs/plugin-react-swc": "^3.0.0",
     "autoprefixer": "^10.4.13",
     "build-number-generator": "^2.0.4",
     "gh-pages": "^4.0.0",

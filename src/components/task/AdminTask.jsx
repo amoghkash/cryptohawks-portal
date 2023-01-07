@@ -1,11 +1,15 @@
-import React from "react";
-import {useState} from "react";
+import {React, useState} from "react";
 import ProgressBar from 'react-customizable-progressbar'
+import { useHistory } from 'react-router-dom'
+import { useCookies } from "react-cookie"
 import TaskDescription from "./TaskDescription";
+import { formatDate } from "../../scripts/time";
 
-function Todo({todo}) {
+function AdminTask({todo}) {
     const [colorSet, setColorSet] = useState(false)
     const [progressBarColor, setProgressBarColor] = useState('')
+    const [cookie, setCookie] = useCookies(['user']);
+
     const [roundedTop, setRoundedTop] = useState(false)
 
 
@@ -13,18 +17,14 @@ function Todo({todo}) {
     const progressBarRadius = (window.innerWidth)/90
     let percentage = todo.percentCompleted
 
-    var cardStyle = "grid grid-cols-6 gap-4 bg-slate-200 rounded-t-lg p-1 py-3"
+    var cardStyle = "grid grid-cols-7 gap-4 bg-slate-200 rounded-t-lg p-1 py-3"
 
-    const taskDropdown = () => {
-        setRoundedTop(!roundedTop)
-    }
-
+    const history = useHistory();
     if(!colorSet){
         if(percentage<25){
             setProgressBarColor('indianred')
         } else if(25<=percentage && percentage<50) {
             setProgressBarColor('coral')
-            console.log("here")
         } else if(50<=percentage && percentage<75) {
             setProgressBarColor('gold')
         } else if(75<=percentage && percentage<=100){
@@ -35,6 +35,22 @@ function Todo({todo}) {
         setColorSet(true)
     }
 
+    if(roundedTop){
+        cardStyle ="grid grid-cols-7 gap-4 bg-slate-200 rounded-t-lg p-1 py-2"
+    }
+
+
+
+    const editForm = (id) =>{
+        console.log(id)
+        console.log("pressed " + id)
+        setCookie('edit_taskID', id, {path:'/', secure: false});
+        history.push('/editTask');
+    }
+
+    const taskDropdown = () => {
+        setRoundedTop(!roundedTop)
+    }
 
     return (
         <div className="snap-center">
@@ -75,6 +91,16 @@ function Todo({todo}) {
                             </div>
                         </div>
                     </div>
+                    <div className="relative col-span-1">
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <button 
+                            onClick={() => {editForm(todo.uid)}}
+                            className='px-4 py-2 bg-urbana-blue text-white rounded-lg'
+                            >
+                            Edit
+                            </button>
+                        </div>
+                    </div>
                 </summary>
                 <TaskDescription todo={todo}/>
             </details>
@@ -83,20 +109,5 @@ function Todo({todo}) {
     );
 };
 
-function padTo2Digits(num) {
-    return num.toString().padStart(2, '0');
-}
-  
-function formatDate(date_str) {
-    if(!date_str){
-        return('N/a')
-    }
-    const date = new Date(date_str)
-    return [
-      padTo2Digits(date.getMonth() + 1),
-      padTo2Digits(date.getDate()),
-      date.getFullYear(),
-    ].join('/');
-  }
 
-export default Todo
+export default AdminTask

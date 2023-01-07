@@ -7,7 +7,7 @@ import GanttChart from '../components/chart/gantt/GanttChart';
 import AdminGanttChart from '../components/chart/gantt/AdminGanttChart';
 
 import AdminButton from '../components/button/AdminButton';
-
+import UpdateView from '../components/updates/Updates';
 
 function Dashboard() {
     const [cookie, setCookie] = useCookies(['user'])
@@ -15,7 +15,11 @@ function Dashboard() {
       return(
         <div>
           <AdminGanttChart />
-          <Calendar />
+          <div className='flex'>
+            <Calendar />
+            <UpdateView />
+          </div>
+          
           <AdminButton link='/admin' text='Admin Dashboard'/>
         </div>
         
@@ -24,7 +28,10 @@ function Dashboard() {
       return(
         <div>
           <GanttChart />
-          <Calendar />
+          <div className='flex'>
+            <Calendar />
+            <UpdateView />
+          </div>
         </div>
       )  
     }

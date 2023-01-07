@@ -15,6 +15,7 @@ function Account() {
     const getData = async()=> {
         if(!user){
             let userRes = await getUserData(cookie.token)
+            console.log(userRes)
             setUser(userRes)
         }
     }

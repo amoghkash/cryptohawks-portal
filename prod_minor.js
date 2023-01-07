@@ -10,7 +10,7 @@ readFile('src/assets/metadata.json',function(err,content) {
     console.log(currentbuild)
     metadata.revMinor= metadata.revMinor +1
     metadata.buildNumber = generate();
-    metadata.buildTag = "Beta Release"
+    metadata.buildTag = "Stable Release"
     writeFile('src/assets/metadata.json',JSON.stringify(metadata),function(err){
         if (err) throw err;
         console.log(`Build: ${metadata.version}.${metadata.revMajor}.${metadata.revMinor}.${metadata.buildNumber} ${metadata.buildTag}`);

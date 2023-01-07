@@ -10,7 +10,7 @@ export async function loginUser(credentials:any):Promise<JSON> {
 // Fetches data from API 
 async function getUserLoginData(credentials:any):Promise<JSON> {
     const res = JSON.stringify(credentials)
-    return fetch('http://localhost:8080/user/login', {
+    return fetch('https://cryptohawks-api-testing-ueanhy6e5q-uk.a.run.app/user/login', {
       method: 'POST',
       body: res,
       credentials: 'include', // Necessary to Save COokies
@@ -31,7 +31,7 @@ export async function signupUser(credentials:JSON): Promise<JSON> {
 async function registerUser(credentials:JSON):Promise<JSON> {
     const res = JSON.stringify(credentials)
     console.log(res)
-    return fetch('http://localhost:8080/user/signup', {
+    return fetch('https://cryptohawks-api-testing-ueanhy6e5q-uk.a.run.app/user/signup', {
       method: 'POST',
       body: res,
       credentials: 'include', // Necessary to Save COokies

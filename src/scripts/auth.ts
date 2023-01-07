@@ -7,5 +7,6 @@ export const logout = () => {
     cookies.remove('admin', {path:'/'});
     cookies.remove('edit_taskID', {path:'/'})
     cookies.remove('token', {path:'/'})
+    cookies.remove('firsttime', {path:'/'})
     window.location.reload()
 }

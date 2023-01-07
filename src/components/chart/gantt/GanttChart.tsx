@@ -31,20 +31,20 @@ function GanttChart() {
         console.log('loaded')
         console.log(tasklist)
         return(
-            <div>
-                <h1>Loading..</h1>
-            </div>
+            loading()
         )
     }
 
+    var d = new Date()
+    d.setDate(d.getDate()-1)
     tasks = getTaskList(tasklist)
     return(
-    <div className='bg-white my-3 mx-3 p-0.5 bg-crypto-blue'>
+        <div className='max-h-7 my-3 mx-3 p-4 bg-crypto-blue rounded-lg'>
             <div className='bg-white'>
                 <Gantt 
                 tasks={tasks}
-                viewDate={new Date()}
-                preStepsCount={2}
+                viewDate={d}
+                preStepsCount={1}
                 />
             </div>
         </div>
@@ -54,3 +54,11 @@ function GanttChart() {
 
 
 export default GanttChart
+
+export function loading() {
+    return(
+        <div className='ml-3 text-lg font-mono'>
+            <h1>Loading..</h1>
+        </div>
+    )
+}

@@ -6,3 +6,12 @@
 - Change Signup POST request to properly incorporate Sub team selections, convert array ton JSOn object @done
 - Add Owner field to task @done
 - Change color of progress bar based on task completion @done
+- Add Buttons to Nav along with menu logo
+- Future Updates:
+    - Add Dropdown Support
+    - Dependency Support
+    - Password Support
+    - Directory
+        - Email
+        - Phone Number
+        - Images

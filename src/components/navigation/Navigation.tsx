@@ -27,8 +27,9 @@ function Navigation() {
                     icon={faBars}
                     onClick={()=> setShowMenu(!showMenu)}
                 />
+                
             </span>
-
+            
             {
                 maskTransitions((styles, item) => 
                 item && 

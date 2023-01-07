@@ -8,7 +8,7 @@ function Home(props) {
     if(cookie.firsttime){ // First Time Login
       return (
         <div>
-          <h1>
+          <h1 className="font-sans text-4xl font-semibold ml-4 mt-2">
               Welcome {cookie.name}, thanks for joining Cryptohawks.
           </h1>
           <Dashboard />
@@ -18,7 +18,7 @@ function Home(props) {
     
     return (
       <div className="">
-        <h1 className="font-sans text-4xl font-semibold ml-3">
+        <h1 className="font-sans text-4xl font-semibold ml-4">
             Hello {cookie.name}
         </h1>
         <Dashboard />
