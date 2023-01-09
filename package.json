@@ -1,6 +1,6 @@
 {
   "name": "cryptohawks-portal",
-  "homepage": "https://amoghkash.github.io/cryptohawks-portal",
+  "homepage": "https://portal.cryptohawks8726.com/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +8,7 @@
     "dev": "npm install --force && vite",
     "old": "vite",
     "build": "tsc && vite build && npm run copy",
-    "copy": "shx cp dist/index.html dist/404.html",
+    "copy": "shx cp dist/index.html dist/404.html && shx cp CNAME dist/CNAME",
     "serve": "npm install --force && node generateBuild.js && npm run build && vite preview",
     "deploy": "npm run build && gh-pages -d dist",
     "major-release": "node prod_major.js && npm run deploy",

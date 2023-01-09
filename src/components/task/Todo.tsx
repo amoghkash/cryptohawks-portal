@@ -46,9 +46,9 @@ function Todo({todo}) {
                         </div>
                     </div>
                     <div className="relative col-span-2">
-                        <div className="absolute top-1/2 -translate-y-1/2 text-urbana-gray text-2xl">
+                        <p className="w-full h-max-15 text-urbana-gray text-2xl truncate">
                             {todo.description}
-                        </div>
+                        </p>
                     </div>
                     <div className="relative col-span-1">
                         <div className="relative">

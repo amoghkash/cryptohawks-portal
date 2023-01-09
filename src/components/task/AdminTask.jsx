@@ -17,7 +17,7 @@ function AdminTask({todo}) {
     const progressBarRadius = (window.innerWidth)/90
     let percentage = todo.percentCompleted
 
-    var cardStyle = "grid grid-cols-7 gap-4 bg-slate-200 rounded-t-lg p-1 py-3"
+    var cardStyle = "grid grid-cols-7  h-max gap-4 bg-slate-200 rounded-t-lg p-1 py-3"
 
     const history = useHistory();
     if(!colorSet){
@@ -54,7 +54,7 @@ function AdminTask({todo}) {
 
     return (
         <div className="snap-center">
-            <details>
+            <details className="">
                 <summary className={cardStyle} onClick={taskDropdown}>
                     <div className="col-span-2 m-2">
                         <div className="text-crypto-blue text-3xl font-semibold">
@@ -62,9 +62,9 @@ function AdminTask({todo}) {
                         </div>
                     </div>
                     <div className="relative col-span-2">
-                        <div className="absolute top-1/2 -translate-y-1/2 text-urbana-gray text-2xl">
+                        <p className="w-full h-max-15 text-urbana-gray text-2xl truncate">
                             {todo.description}
-                        </div>
+                        </p>
                     </div>
                     <div className="relative col-span-1">
                         <div className="relative">

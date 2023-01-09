@@ -15,7 +15,7 @@ function Header() {
         <span className="inline-flex font-bold ml-4">
           <img src={logo} width={35}></img>
           <div className='self-center ml-3 text-3xl'>
-            Cryptohawks
+            Cryptohawks Portal
           </div>
         </span>             
       </Link>

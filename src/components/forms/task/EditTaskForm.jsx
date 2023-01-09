@@ -63,7 +63,6 @@ export default function EditTaskForm(props){
     }
 
     const loadUsers = async()=> {
-        console.log(userNameList)
         var UserNameList_temp = []
         if(userNameList.length == 0){
             let users = await getAllUser()
@@ -77,6 +76,11 @@ export default function EditTaskForm(props){
                 objToAppend['label']=key
                 objToAppend['content']=value
                 UserNameList_temp.push(objToAppend)
+            });
+            UserNameList_temp.sort(function(a, b) {
+                var textA = a.content.toUpperCase();
+                var textB = b.content.toUpperCase();
+                return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
             });
             setUserNameList(UserNameList_temp)
         }

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
+import {HashRouter, Route, Switch, Redirect} from 'react-router-dom'
 import React from 'react';
 
 import Header from '../components/navigation/Header';
@@ -21,7 +21,8 @@ function AppHandler() {
   console.log("APP")
   return (
     <div>
-      <Router basename={'/cryptohawks-portal'}>
+
+      <HashRouter >
         <Header/> 
         <Switch>
           <Route exact path="/">
@@ -64,7 +65,7 @@ function AppHandler() {
         </Switch>
         {/* <Footer /> */}
         <NoConnection />
-      </Router>
+      </HashRouter>
     </div>
 
   );

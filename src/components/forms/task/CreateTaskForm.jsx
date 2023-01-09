@@ -39,6 +39,11 @@ export default function CreateTaskForm(props){
             objToAppend['content']=value
             UserNameList.push(objToAppend) 
         });
+        UserNameList.sort(function(a, b) {
+            var textA = a.content.toUpperCase();
+            var textB = b.content.toUpperCase();
+            return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+        });
         setIsLoading(false)
     }
     if(isLoading){
