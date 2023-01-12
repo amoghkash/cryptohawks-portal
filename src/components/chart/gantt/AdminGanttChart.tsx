@@ -32,11 +32,20 @@ function AdminGanttChart() {
     var d = new Date()
     d.setDate(d.getDate()-1)
     tasks = getTaskList(tasklist)
+
+    const handleExpanderClick = (task: Task) => {
+        setTasklist(tasks.map(t => (t.id === task.id ? task : t)));
+        console.log("On expander click Id:" + task.id);
+        tasks = getTaskList(tasklist)
+    };
+
+
     return(
         <div className='my-3 mx-3 p-4 bg-crypto-blue rounded-lg'>
             <div className='bg-white'>
                 <Gantt 
                 tasks={tasks}
+                onExpanderClick={handleExpanderClick}
                 viewDate={d}
                 preStepsCount={1}
                 />
