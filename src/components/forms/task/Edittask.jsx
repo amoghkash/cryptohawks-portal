@@ -54,14 +54,10 @@ export default function EditTaskForm(props){
         
         if(!endDate){
             name_user = taskData.assignee
-            setTitle(taskData.title)
-            setDescription(taskData.description)
-
             var date_start = new Date(taskData.startDate)
             var date_end = new Date(taskData.endDate)
             setStartDate(date_start)
             setEndDate(date_end)
-            
         }
         
     }
@@ -159,11 +155,11 @@ export default function EditTaskForm(props){
                 <form onSubmit={handleSubmit} className="grid grid-cols-1 place-items-center" >
                     <label className="grid grid-cols-1 place-items-center pb-2">
                         <p>Title:</p>
-                        <input type="text"  value={title} className="rounded-full border-2 border-blue-800 p-1" onChange={e => setTitle(e.target.value)}/>
+                        <input type="text"  value={taskData.title} className="rounded-full border-2 border-blue-800 p-1" onChange={e => setTitle(e.target.value)}/>
                     </label>
                     <label className="grid grid-cols-1 place-items-center">
                         <p>Description:</p>
-                        <input type="text"  value={description} className="rounded-full border-2 border-blue-800 p-1" onChange={e => setDescription(e.target.value)}/>
+                        <input type="text"  value={taskData.description} className="rounded-full border-2 border-blue-800 p-1" onChange={e => setDescription(e.target.value)}/>
                     </label>
 
                     <div className="grid flex w-4/5 h-fit grid-cols-2">
